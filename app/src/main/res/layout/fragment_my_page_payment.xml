@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/relative_title_payment"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@color/colorNavy"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_back_from_payment"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorNavy"
+                android:scaleType="centerInside"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="133dp"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:text="충전하기"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linear_cash_payment"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/colorNavy"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보유금"
+                    android:textColor="@color/colorLightGray"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/txt_total_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:text="0"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="45sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="3dp"
+                    android:text="원"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edit_txt_payment_cash"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="금액을 입력해주세요."
+                        android:inputType="number"
+                        android:letterSpacing="0.02"
+                        android:maxLength="25"
+                        android:singleLine="true"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="332dp"
+                    android:layout_height="43dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="#eeeeee"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_hundred_thousand"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:onClick="plusTotal"
+                        android:text="+ 100,000"
+                        android:textColor="#25285f"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorDarkGray" />
+
+                    <Button
+                        android:id="@+id/btn_fifty_thousand"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:onClick="plusTotal"
+                        android:text="+ 50,000"
+                        android:textColor="#25285f"
+                        android:textSize="15sp" />
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorDarkGray" />
+
+                    <Button
+                        android:id="@+id/btn_ten_thousand"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:onClick="plusTotal"
+                        android:text="+ 10,000"
+                        android:textColor="#25285f"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                </View>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="38dp"
+                    android:text="결제수단 선택"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@color/colorLightGray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorWhite"
+                            android:src="@drawable/bank_transfer"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="계좌이체" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorLightGray" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorWhite"
+                            android:src="@drawable/credit_card"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="신용카드" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorLightGray" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_margin="4dp"
+                            android:background="@color/colorWhite"
+                            android:src="@drawable/mobile_pay"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="핸드폰 결제" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/colorLightGray" />
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_payment_cash"
+                android:layout_width="332dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:background="@color/colorNavy"
+                android:text="충전하기"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
